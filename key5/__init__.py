@@ -54,7 +54,8 @@ def ternary(string = ''):
     code = 0
     display = ' ' * 20
     last_len = 0
-
+    
+    keyboard.read_event()
     while True:
         last_len = len(display)
         print(' ' * last_len, end = '\r')
@@ -103,7 +104,7 @@ def ternary(string = ''):
                 return string
 
 
-def roll(string = '', cfg = 'layout'):
+def roll(string = '', cfg = 'key5.layout'):
     '''
     Accepts a string for editing. Can be set the layout.
     
@@ -111,6 +112,7 @@ def roll(string = '', cfg = 'layout'):
     Up/down - character selection.
     Enter - add character/complete editing.
     '''
+    keyboard.read_event()
     layout = importlib.import_module(cfg)
     while True:
         c_bias = layout.bias_x[layout.pos_y]
@@ -177,3 +179,4 @@ def roll(string = '', cfg = 'layout'):
                 layout.shift_state = False
                 string = string[:layout.cur] + char + string[layout.cur:]
                 layout.cur += 1
+
