@@ -12,3 +12,9 @@ $ git clone https://github.com/zgyr/key5.git
 import key5
 print(key5.roll('Hello, world!'))
 ```
+
+### Example
+![roll](https://github.com/zgyr/key5/raw/master/roll.gif)
+
+
+![ternary](https://github.com/zgyr/key5/raw/master/ternary.gif)
